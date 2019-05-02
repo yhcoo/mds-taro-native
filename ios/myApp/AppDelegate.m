@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 #import <CodePush/CodePush.h>
-//#import "CodePush.h"
+#import <Bugly/Bugly.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
@@ -17,8 +17,6 @@
 {
   NSURL *jsCodeLocation;
 
-  
-//   jsCodeLocation = [CodePush bundleURL];
   
     #ifdef DEBUG
         jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
@@ -37,6 +35,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [Bugly startWithAppId:@"7129ff1c97"];
   return YES;
 }
 
